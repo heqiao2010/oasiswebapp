@@ -2,6 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/check/check",
+    "pages/game/rank/rank",
     "pages/logs/logs",
     "pages/game/flappybird/flappybird"
   ],

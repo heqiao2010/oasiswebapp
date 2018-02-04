@@ -19,6 +19,7 @@ App({
               that.globalData.userInfo = res.userInfo
               typeof cb == "function" && cb(that.globalData.userInfo)
               console.log(res.userInfo)
+              wx.setStorageSync('user', res.userInfo)
             }
           })
         }

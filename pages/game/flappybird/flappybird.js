@@ -211,34 +211,73 @@ Page({
       wx.setStorageSync('game_flappybird', topPoint)
     }
 
-    wx.showModal({
-      title: "Game Over!",
-      content: "得分：" + point + "    最高分：" + topPoint,
-      cancelText: "退出",
-      cancelColor: "#ff0000",
-      confirmText: "重来",
-      confirmColor: "#00ff00",
+    var userInfo = wx.getStorageSync('user') || 'None'
+    console.log('info: ' + userInfo)
+    // 上传用户信息
+    wx.request({
+      url: 'https://oasisatauth.h3c.com/webserver/game/rank',
+      method: 'POST',
+      data: {
+        user: userInfo,
+        topPoint: topPoint
+      },
+      header: {
+        'content-type': 'application/json'
+      },
       success: function (res) {
-        if (res.confirm) {
-          that.startGame()
-        }
-        else {
-          wx.navigateBack({
-            delta: 1, // 回退前 delta(默认为1) 页面
-            success: function (res) {
-              // success
-            },
-            fail: function () {
-              // fail
-            },
-            complete: function () {
-              // complete
-            }
-          })
-        }
+        // success
+      },
+      fail: function () {
+        wx.showToast({
+          title: '数据同步中...',
+          icon: 'loading',
+          duration: 2000
+        })
       }
     })
-  },
+    
+    wx.showActionSheet({
+      itemList: ['查看排行榜', '重来（得分：' + point + '，最嘉：' + topPoint + ')', '退出'],
+      success: function (res) {
+        switch (res.tapIndex){
+          case 0:
+            wx.navigateTo({
+              url: '../rank/rank'
+            })
+            break;
+          case 1:
+            that.startGame()
+            break;
+          case 2:
+            wx.navigateBack({
+              delta: 1, // 回退前 delta(默认为1) 页面
+              success: function (res) {
+                // success
+              },
+              fail: function () {
+                // fail
+              },
+              complete: function () {
+                // complete
+              }
+            })
+            break;
+          default:
+            console.log(res.errMsg)
+        }
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+        wx.showToast({
+          title: '操作失败 ' + res.errMsg,
+          icon: 'loading',
+          duration: 2000
+        }) 
+      }
+    })  
+    },
+
+    
   // 创建一个新树
   createNewTree: function (width, height) {
     var randVar = new Date().getTime()  // 取当前时间戳作为随机数
