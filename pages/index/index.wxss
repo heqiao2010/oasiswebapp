@@ -13,9 +13,22 @@
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  color: #000;
 }
 
 .usermotto {
-  margin-top: 200px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.user-motto {
+  color: #aaa;
+  font-family: Microsoft YaHei;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.index-button {
+  margin-top: 10rpx;
+  width: 50%;
 }

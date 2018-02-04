@@ -1,12 +1,14 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/check/check",
+    "pages/logs/logs",
     "pages/game/flappybird/flappybird"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Game",
+    "navigationBarTitleText": "绿洲微信Wi-Fi登录",
     "navigationBarTextStyle":"black"
   }
 }

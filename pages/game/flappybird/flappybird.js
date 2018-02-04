@@ -174,7 +174,7 @@ Page({
 
   // 描画得分
   drawPoint: function (context) {
-    context.setFontSize(30)
+    context.setFontSize(20)
     context.fillText("得分：" + point, this.data.width / 2 - 50, 30)
     context.stroke()
   },
@@ -212,7 +212,7 @@ Page({
     }
 
     wx.showModal({
-      title: "You dead!",
+      title: "Game Over!",
       content: "得分：" + point + "    最高分：" + topPoint,
       cancelText: "退出",
       cancelColor: "#ff0000",

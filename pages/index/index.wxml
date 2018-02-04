@@ -2,10 +2,12 @@
 <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <text class="userinfo-nickname">欢迎{{userInfo.nickName}}光临！</text>
   </view>
   <view class="usermotto">
-    <text class="user-motto">{{welcome}}</text>
+    <text class="user-motto">{{motto}}</text>
   </view>
-  <button type="primary" style="margin-top:10px" bindtap="bindGameTap">进入游戏</button>
+  <button type="primary" class="index-button" bindtap="bindCheckTap">Wi-Fi检测</button>
+  <button type="primary" open-type="contact" class="index-button">意见反馈</button>
+  <button type="default" class="index-button" bindtap="bindGameTap">小游戏</button>
 </view>
