@@ -1,0 +1,17 @@
+<!--pages/game/flappybird.wxml-->
+<view class="page" >
+  <!--<view animation="{{animationData}}" style="background:red;height:100rpx;width:100rpx"></view>-->
+  <!--<canvas style="width:{{width}}px; height:{{height}}px;" canvas-id="tree_canvas" disable-scroll="false"></canvas> -->
+  
+  <canvas style="width:{{width}}px; height:{{height}}px;" canvas-id="game_canvas" disable-scroll="false"
+    bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" bindtouchcancel="touchcancel"
+   >
+  </canvas>
+  
+
+  <view class="body-view">
+    <loading hidden="{{hidden}}" bindchange="loadingChange">
+      加载中...
+    </loading>
+  </view>
+</view>
