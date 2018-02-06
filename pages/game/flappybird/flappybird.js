@@ -193,7 +193,7 @@ Page({
     list_tree.push(this.createNewTree(this.data.width, this.data.height))
     interval = setInterval(function () {
       that.drawView()
-    }, 300)
+    }, 150)
   },
 
   pauseGame: function () {
@@ -229,8 +229,8 @@ Page({
       },
       fail: function () {
         wx.showToast({
-          title: '数据同步中...',
-          icon: 'loading',
+          title: '数据同步失败',
+          icon: 'none',
           duration: 2000
         })
       }
@@ -268,11 +268,11 @@ Page({
       },
       fail: function (res) {
         console.log(res.errMsg)
-        wx.showToast({
-          title: '操作失败 ' + res.errMsg,
-          icon: 'loading',
-          duration: 2000
-        }) 
+        //wx.showToast({
+        //  title: '操作失败 ' + res.errMsg,
+        //  icon: 'none',
+        //  duration: 2000
+        //}) 
       }
     })  
     },
