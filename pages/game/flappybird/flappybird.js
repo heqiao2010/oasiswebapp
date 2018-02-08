@@ -206,35 +206,34 @@ Page({
 
     // 最高纪录
     var topPoint = wx.getStorageSync('game_flappybird') || 0
-    if (point > topPoint) {
+    if (point >= topPoint) {
       topPoint = point
       wx.setStorageSync('game_flappybird', topPoint)
+      var userInfo = wx.getStorageSync('user') || 'None'
+      console.log('info: ' + userInfo)
+      // 上传用户信息
+      wx.request({
+        url: 'https://oasisatauth.h3c.com/webserver/game/rank',
+        method: 'POST',
+        data: {
+          user: userInfo,
+          topPoint: topPoint
+        },
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function (res) {
+          // success
+        },
+        fail: function () {
+          wx.showToast({
+            title: '数据同步失败',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      })
     }
-
-    var userInfo = wx.getStorageSync('user') || 'None'
-    console.log('info: ' + userInfo)
-    // 上传用户信息
-    wx.request({
-      url: 'https://oasisatauth.h3c.com/webserver/game/rank',
-      method: 'POST',
-      data: {
-        user: userInfo,
-        topPoint: topPoint
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        // success
-      },
-      fail: function () {
-        wx.showToast({
-          title: '数据同步失败',
-          icon: 'none',
-          duration: 2000
-        })
-      }
-    })
     
     wx.showActionSheet({
       itemList: ['查看排行榜', '重来（得分：' + point + '，最嘉：' + topPoint + ')', '退出'],
