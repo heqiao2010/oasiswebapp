@@ -17,8 +17,10 @@
 }
 
 .usermotto {
-  margin-top: 80px;
-  margin-bottom: 40px;
+  margin: 80rpx;
+  margin-bottom: 40rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
 }
 
 .user-motto {
@@ -29,6 +31,6 @@
 }
 
 .index-button {
-  margin-top: 10rpx;
-  width: 50%;
+  margin: 10rpx;
+  width: 300rpx;
 }

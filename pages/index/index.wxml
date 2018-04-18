@@ -7,7 +7,12 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-  <button type="primary" class="index-button" bindtap="bindCheckTap">Wi-Fi检测</button>
-  <button type="primary" open-type="contact" class="index-button">意见反馈</button>
-  <button type="default" class="index-button" bindtap="bindGameTap">小游戏</button>
+  <view style="display: flex; flex-direction: row;">
+    <button type="primary" class="index-button" bindtap="bindCheckTap">Wi-Fi检测</button>
+    <button type="primary" class="index-button" bindtap="autoLoginTap">免认证表项</button>
+  </view>
+  <view style="display: flex; flex-direction: row;">
+    <button type="default" open-type="contact" class="index-button">意见反馈</button>
+    <button type="default" class="index-button" bindtap="bindGameTap">小游戏</button>
+  </view>
 </view>

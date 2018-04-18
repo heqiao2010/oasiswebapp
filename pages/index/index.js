@@ -24,6 +24,12 @@ Page({
       url: '../check/check'
     })
   },
+  autoLoginTap: function(){
+    console.log('autoLogin tap');
+    wx.navigateTo({
+      url: '../autoLogin/query'
+    })
+  },
   onLoad: function () {
     console.log('onLoad')
     wx.getU

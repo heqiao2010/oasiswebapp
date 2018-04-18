@@ -4,7 +4,8 @@
     "pages/check/check",
     "pages/game/rank/rank",
     "pages/logs/logs",
-    "pages/game/flappybird/flappybird"
+    "pages/game/flappybird/flappybird",
+    "pages/autoLogin/query"
   ],
   "window":{
     "backgroundTextStyle":"light",
