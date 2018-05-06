@@ -30,9 +30,20 @@ Page({
       url: '../autoLogin/query'
     })
   },
+  bindAdminManageTap: function(){
+    console.log('bindAdminManage tap')
+    wx.navigateTo({
+      url: '../admin/login',
+    })
+  },
+  bindWxscanTap: function(){
+    console.log('bindWxscan tap')
+    wx.navigateTo({
+      url: '../wxscan/launch',
+    })
+  },
   onLoad: function () {
     console.log('onLoad')
-    wx.getU
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){

@@ -15,4 +15,8 @@
     <button type="default" open-type="contact" class="index-button">意见反馈</button>
     <button type="default" class="index-button" bindtap="bindGameTap">小游戏</button>
   </view>
+   <view style="display: flex; flex-direction: row;">
+    <button type="default" class="index-button" bindtap="bindAdminManageTap">认证后台</button>
+    <button type="default" class="index-button" bindtap="bindWxscanTap">扫码测试</button>
+  </view>
 </view>

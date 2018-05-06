@@ -5,7 +5,9 @@
     "pages/game/rank/rank",
     "pages/logs/logs",
     "pages/game/flappybird/flappybird",
-    "pages/autoLogin/query"
+    "pages/autoLogin/query",
+    "pages/admin/login",
+    "pages/wxscan/launch"
   ],
   "window":{
     "backgroundTextStyle":"light",
